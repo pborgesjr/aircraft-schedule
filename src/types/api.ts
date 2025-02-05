@@ -1,9 +1,13 @@
-export type AirCraft = {
+export type AirCraftResponse = {
   ident: string;
   type: string;
   economySeats: number;
   base: string;
 };
+
+export interface AirCraft extends AirCraftResponse {
+  schedule: Flight[];
+}
 
 export type Flight = {
   ident: string;

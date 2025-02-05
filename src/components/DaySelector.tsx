@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getToday } from "../utils";
 
 export const DaySelector = () => {
   const [currentDay, setCurrentDay] = useState(0);
@@ -9,7 +10,7 @@ export const DaySelector = () => {
         disabled={currentDay === 0}
         onClick={() => setCurrentDay(currentDay - 1)}
       >{`<`}</button>
-      <p>{currentDay}</p>
+      <p>{getToday().toString()}</p>
       <button onClick={() => setCurrentDay(currentDay + 1)}>{`>`}</button>
     </div>
   );
