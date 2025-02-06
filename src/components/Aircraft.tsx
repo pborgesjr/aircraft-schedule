@@ -4,21 +4,34 @@ import { getAircraftUtilization, getTotalDuration } from "../utils";
 type AircraftProps = {
   aircraft: AirCraft;
   onClick: VoidFunction;
+  isSelected?: boolean;
 };
 
-export const Aircraft = ({ aircraft, onClick }: AircraftProps) => {
+export const Aircraft = ({ aircraft, onClick, isSelected }: AircraftProps) => {
   const percentage =
     aircraft.schedule.length > 0
       ? getAircraftUtilization(getTotalDuration(aircraft.schedule))
       : "0 %";
   return (
-    <button
-      type="button"
-      className="flex flex-col items-center border-2 border-white w-full"
-      onClick={onClick}
-    >
-      <h2>{aircraft.ident}</h2>
-      <p>{percentage}</p>
-    </button>
+    <div className="flex flex-col items-center border-b-3 border-white py-3 w-full">
+      <button
+        type="button"
+        className={`border-white border-2 w-[50%] py-2 ${
+          isSelected ? "bg-white" : ""
+        }`}
+        onClick={onClick}
+      >
+        <h2 className={`font-bold ${isSelected ? "text-black" : "text-white"}`}>
+          {aircraft.ident}
+        </h2>
+        <p
+          className={`font-semibold ${
+            isSelected ? "text-black" : "text-white"
+          }`}
+        >
+          {percentage}
+        </p>
+      </button>
+    </div>
   );
 };

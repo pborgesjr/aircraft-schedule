@@ -1,17 +1,15 @@
-import { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 import { getToday } from "../utils";
 
 export const DaySelector = () => {
-  const [currentDay, setCurrentDay] = useState(0);
-
   return (
-    <div className="flex flex-row items-center">
-      <button
-        disabled={currentDay === 0}
-        onClick={() => setCurrentDay(currentDay - 1)}
-      >{`<`}</button>
-      <p>{getToday().toString()}</p>
-      <button onClick={() => setCurrentDay(currentDay + 1)}>{`>`}</button>
+    <div className="flex flex-row items-center justify-center py-6">
+      <FaChevronLeft size={24} />
+
+      <p className="mx-8 text-xl font-semibold">{getToday().toString()}</p>
+
+      <FaChevronRight size={24} />
     </div>
   );
 };

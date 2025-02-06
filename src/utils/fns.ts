@@ -1,7 +1,8 @@
+import { format } from "date-fns";
 import { Flight } from "../types";
 import { DAY_IN_SECONDS, TURNAROUND_TIME_IN_SECONDS } from "./constants";
 
-export const getToday = () => new Date();
+export const getToday = () => format(new Date(), "do MMMM yyyy");
 
 export const getTotalDuration = (flights: Flight[]) => {
   const totalFlightTime = flights.reduce((acc, flight) => {
