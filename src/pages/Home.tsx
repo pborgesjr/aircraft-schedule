@@ -9,7 +9,8 @@ import {
   SelectedFlight,
   Timeline,
 } from "../components";
-import type { AirCraft } from "../types";
+import type { AirCraft, Flight } from "../types";
+import { replaceElementWithoutMutating } from "../utils";
 
 export const Home = () => {
   const [selectedAircraftID, setSelectedAircraftID] = useState("");
@@ -18,18 +19,21 @@ export const Home = () => {
   );
 
   const { data: aircrafts } = useAircrafts();
+
   const selectedAircraft = aircrafts?.find(
     (elem) => elem.ident === selectedAircraftID
   );
+
   const { data: flights } = useFlights({
     schedule: selectedAircraft?.schedule,
     selectedFlightID,
   });
+
   const queryClient = useQueryClient();
 
   const handleSelectFlight = (flightID: string) =>
     setSelectedFlightID((prevState) =>
-      prevState === flightID ? "" : flightID
+      prevState === flightID ? undefined : flightID
     );
 
   const handleRemove = (flightID: string, removeAll?: boolean) => {
@@ -59,7 +63,7 @@ export const Home = () => {
     queryClient.setQueryData(["aircrafts"], (data: AirCraft[]) => {
       return data.map((aircraft) => {
         if (aircraft.ident === selectedAircraftID && flightToBeAdded) {
-          /*           if (selectedFlightID) { //TODO: fix
+          if (selectedFlightID) {
             const flightIndexToBeReplaced = aircraft.schedule.findIndex(
               (elem) => elem.ident === selectedFlightID
             );
@@ -71,7 +75,7 @@ export const Home = () => {
                 aircraft.schedule
               ),
             };
-          } */
+          }
 
           return {
             ...aircraft,
@@ -81,6 +85,7 @@ export const Home = () => {
         return aircraft;
       });
     });
+    setSelectedFlightID(undefined);
   };
   return (
     <div className="min-h-[100vh] flex flex-col">
