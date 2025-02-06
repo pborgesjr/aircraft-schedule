@@ -7,9 +7,9 @@ import {
   DaySelector,
   FlightItem,
   SelectedFlight,
+  Timeline,
 } from "../components";
-import type { AirCraft, Flight } from "../types";
-import { replaceElementWithoutMutating } from "../utils";
+import type { AirCraft } from "../types";
 
 export const Home = () => {
   const [selectedAircraftID, setSelectedAircraftID] = useState("");
@@ -119,6 +119,8 @@ export const Home = () => {
               />
             ))}
           </div>
+
+          <Timeline schedule={selectedAircraft?.schedule} />
         </div>
 
         <div className="flex flex-1 flex-col h-[80vh]">

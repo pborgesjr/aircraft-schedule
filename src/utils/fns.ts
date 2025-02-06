@@ -14,8 +14,8 @@ export const getTotalDuration = (flights: Flight[]) => {
   return totalFlightTime + totalConnectionTime;
 };
 
-export const getAircraftUtilization = (totalUsageTime: number) =>
-  Math.round((totalUsageTime / DAY_IN_SECONDS) * 100) + " %";
+export const getPercentage = (totalUsageTime: number) =>
+  Math.round((totalUsageTime / DAY_IN_SECONDS) * 100);
 
 export const replaceElementWithoutMutating = <T>(
   index: number,

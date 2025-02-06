@@ -3,6 +3,8 @@
 :root {
   --lime: #05ff00;
   --blood: #ff0000;
+  --grey: #999;
+  --purple: #8a2be2;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

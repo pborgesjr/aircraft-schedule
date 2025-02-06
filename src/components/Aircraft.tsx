@@ -1,5 +1,5 @@
 import { AirCraft } from "../types";
-import { getAircraftUtilization, getTotalDuration } from "../utils";
+import { getPercentage, getTotalDuration } from "../utils";
 
 type AircraftProps = {
   aircraft: AirCraft;
@@ -10,7 +10,7 @@ type AircraftProps = {
 export const Aircraft = ({ aircraft, onClick, isSelected }: AircraftProps) => {
   const percentage =
     aircraft.schedule.length > 0
-      ? getAircraftUtilization(getTotalDuration(aircraft.schedule))
+      ? getPercentage(getTotalDuration(aircraft.schedule)) + " %"
       : "0 %";
   return (
     <div className="flex flex-col items-center border-b-3 border-white py-3 w-full">
