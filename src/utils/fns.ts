@@ -5,6 +5,8 @@ import { DAY_IN_SECONDS, TURNAROUND_TIME_IN_SECONDS } from "./constants";
 export const getToday = () => format(new Date(), "do MMMM yyyy");
 
 export const getTotalDuration = (flights: Flight[]) => {
+  if (flights.length === 0) return 0;
+
   const totalFlightTime = flights.reduce((acc, flight) => {
     return acc + flight.arrivaltime - flight.departuretime;
   }, 0);

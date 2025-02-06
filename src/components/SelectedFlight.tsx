@@ -1,7 +1,7 @@
 import { FaAngleRight } from "react-icons/fa";
 import { Flight } from "../types";
 
-type SelectedFlightProps = {
+export type SelectedFlightProps = {
   onRemove?: (flightID: string) => void;
   onSelect?: (flightID: string) => void;
   isSelected?: boolean;
@@ -36,6 +36,7 @@ export const SelectedFlight = ({
         </h2>
         {onRemove && (
           <span
+            data-testid="remove-button"
             className="text-(--blood) px-3 py-1 rounded-xl border-(--blood) border-3 font-semibold"
             onClick={(event) => {
               event.stopPropagation();
@@ -49,6 +50,7 @@ export const SelectedFlight = ({
 
       <div className="mt-8 flex flex-row justify-between w-full items-center">
         <section
+          data-testid="departure"
           className={`flex flex-col ${sectionStyle} py-3 px-7 rounded-xl`}
         >
           <span className="font-semibold">{origin}</span>
@@ -56,6 +58,7 @@ export const SelectedFlight = ({
         </section>
         <FaAngleRight size={32} color={iconColor} />
         <section
+          data-testid="arrival"
           className={`flex flex-col ${sectionStyle} py-3 px-7 rounded-xl`}
         >
           <span className="font-semibold">{destination}</span>

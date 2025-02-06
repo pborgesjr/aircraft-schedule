@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Flight } from "../types";
 import { getPercentage, TURNAROUND_TIME_IN_SECONDS } from "../utils";
 
-type TimelineProps = {
+export type TimelineProps = {
   schedule?: Flight[];
 };
 

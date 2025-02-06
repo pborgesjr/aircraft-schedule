@@ -1,6 +1,6 @@
 import { FaPlaneDeparture, FaPlaneArrival, FaAngleRight } from "react-icons/fa";
 
-type FlightProps = {
+export type FlightProps = {
   id: string;
   departure: string;
   arrival: string;
