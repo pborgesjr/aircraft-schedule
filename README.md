@@ -1,5 +1,7 @@
 # Aircraft Scheduler
 
+This project simulates an aircraft scheduler. To assign flights to a specific aircraft, select an aircraft from the list on the left and choose the desired flights from the list on the right. The assigned rotation for that aircraft will be displayed in the center of the screen, along with a timeline showing its schedule throughout the day. You can remove the first or last flight from the rotation, as well as replace a specific flight. To replace a flight, select it from the rotation list and choose an available flight from the list on the right.
+
 ## Demo
 
 https://airport-scheduler.netlify.app/
