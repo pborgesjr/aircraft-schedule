@@ -39,6 +39,7 @@ npm test
 ## TODO
 
 - Add animations to components and Home Page
+- Add skeletons/loading/shimmer
 - Add tests to remaining files
 - Integrate a router if more screens are added
 - Improve responsiveness to support mobile devices
