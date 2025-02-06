@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>70/70</span>
+                <span class='fraction'>82/82</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>70/70</span>
+                <span class='fraction'>82/82</span>
             </div>
         
             
@@ -133,7 +133,19 @@
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -174,8 +186,20 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -234,6 +258,7 @@ export const SelectedFlight = ({
       type="button"
       className={`border-3 flex flex-col p-4 w-full ${buttonBackground}`}
       onClick={() =&gt; onSelect?.(ident)}
+      aria-label={`Select flight ${ident}`}
     &gt;
       &lt;div className="flex flex-row justify-between items-center w-full"&gt;
         &lt;h2 className={`text-start ${headingColor} text-xl font-bold`}&gt;
@@ -242,6 +267,7 @@ export const SelectedFlight = ({
         {onRemove &amp;&amp; (
           &lt;span
             data-testid="remove-button"
+            aria-label={`Remove flight ${ident}`}
             className="text-(--blood) px-3 py-1 rounded-xl border-(--blood) border-3 font-semibold"
             onClick={(event) =&gt; {
               event.stopPropagation();
@@ -256,18 +282,28 @@ export const SelectedFlight = ({
       &lt;div className="mt-8 flex flex-row justify-between w-full items-center"&gt;
         &lt;section
           data-testid="departure"
+          aria-label={`Departure from ${origin} at ${readable_departure}`}
           className={`flex flex-col ${sectionStyle} py-3 px-7 rounded-xl`}
         &gt;
-          &lt;span className="font-semibold"&gt;{origin}&lt;/span&gt;
-          &lt;span className="font-semibold"&gt;{readable_departure}&lt;/span&gt;
+          &lt;span className="font-semibold" aria-hidden&gt;
+            {origin}
+          &lt;/span&gt;
+          &lt;span className="font-semibold" aria-hidden&gt;
+            {readable_departure}
+          &lt;/span&gt;
         &lt;/section&gt;
         &lt;FaAngleRight size={32} color={iconColor} /&gt;
         &lt;section
           data-testid="arrival"
+          aria-label={`Arrival at ${destination} at ${readable_arrival}`}
           className={`flex flex-col ${sectionStyle} py-3 px-7 rounded-xl`}
         &gt;
-          &lt;span className="font-semibold"&gt;{destination}&lt;/span&gt;
-          &lt;span className="font-semibold"&gt;{readable_arrival}&lt;/span&gt;
+          &lt;span className="font-semibold" aria-hidden&gt;
+            {destination}
+          &lt;/span&gt;
+          &lt;span className="font-semibold" aria-hidden&gt;
+            {readable_arrival}
+          &lt;/span&gt;
         &lt;/section&gt;
       &lt;/div&gt;
     &lt;/button&gt;
@@ -280,7 +316,7 @@ export const SelectedFlight = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-06T19:07:46.352Z
+                at 2025-02-06T19:43:23.989Z
             </div>
         <script src="../prettify.js"></script>
         <script>

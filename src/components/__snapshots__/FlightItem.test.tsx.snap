@@ -18,6 +18,7 @@ exports[`Testing FlightItem component Should match with the snapshot 1`] = `
           class="mt-2 flex flex-row justify-between items-center w-full"
         >
           <section
+            aria-label="Departure from AS1001"
             class="flex flex-1 flex-col bg-white py-3 rounded-xl items-center"
           >
             <span
@@ -62,6 +63,7 @@ exports[`Testing FlightItem component Should match with the snapshot 1`] = `
             />
           </svg>
           <section
+            aria-label="Arrival from AS1001"
             class="flex flex-col flex-1 bg-white py-3 rounded-xl items-center"
           >
             <span
@@ -110,6 +112,7 @@ exports[`Testing FlightItem component Should match with the snapshot 1`] = `
         class="mt-2 flex flex-row justify-between items-center w-full"
       >
         <section
+          aria-label="Departure from AS1001"
           class="flex flex-1 flex-col bg-white py-3 rounded-xl items-center"
         >
           <span
@@ -154,6 +157,7 @@ exports[`Testing FlightItem component Should match with the snapshot 1`] = `
           />
         </svg>
         <section
+          aria-label="Arrival from AS1001"
           class="flex flex-col flex-1 bg-white py-3 rounded-xl items-center"
         >
           <span

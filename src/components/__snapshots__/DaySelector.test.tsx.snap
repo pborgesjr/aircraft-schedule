@@ -9,6 +9,7 @@ exports[`Testing DaySelector component Should match with the snapshot 1`] = `
         class="flex flex-row items-center justify-center py-6"
       >
         <svg
+          aria-label="Previous day button"
           fill="currentColor"
           height="24"
           stroke="currentColor"
@@ -22,11 +23,13 @@ exports[`Testing DaySelector component Should match with the snapshot 1`] = `
           />
         </svg>
         <p
+          aria-label="Today text"
           class="mx-8 text-xl font-semibold"
         >
           6th February 2025
         </p>
         <svg
+          aria-label="Next day button"
           fill="currentColor"
           height="24"
           stroke="currentColor"
@@ -47,6 +50,7 @@ exports[`Testing DaySelector component Should match with the snapshot 1`] = `
       class="flex flex-row items-center justify-center py-6"
     >
       <svg
+        aria-label="Previous day button"
         fill="currentColor"
         height="24"
         stroke="currentColor"
@@ -60,11 +64,13 @@ exports[`Testing DaySelector component Should match with the snapshot 1`] = `
         />
       </svg>
       <p
+        aria-label="Today text"
         class="mx-8 text-xl font-semibold"
       >
         6th February 2025
       </p>
       <svg
+        aria-label="Next day button"
         fill="currentColor"
         height="24"
         stroke="currentColor"
