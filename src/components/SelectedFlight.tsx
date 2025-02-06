@@ -29,6 +29,7 @@ export const SelectedFlight = ({
       type="button"
       className={`border-3 flex flex-col p-4 w-full ${buttonBackground}`}
       onClick={() => onSelect?.(ident)}
+      aria-label={`Select flight ${ident}`}
     >
       <div className="flex flex-row justify-between items-center w-full">
         <h2 className={`text-start ${headingColor} text-xl font-bold`}>
@@ -37,6 +38,7 @@ export const SelectedFlight = ({
         {onRemove && (
           <span
             data-testid="remove-button"
+            aria-label={`Remove flight ${ident}`}
             className="text-(--blood) px-3 py-1 rounded-xl border-(--blood) border-3 font-semibold"
             onClick={(event) => {
               event.stopPropagation();
@@ -51,18 +53,28 @@ export const SelectedFlight = ({
       <div className="mt-8 flex flex-row justify-between w-full items-center">
         <section
           data-testid="departure"
+          aria-label={`Departure from ${origin} at ${readable_departure}`}
           className={`flex flex-col ${sectionStyle} py-3 px-7 rounded-xl`}
         >
-          <span className="font-semibold">{origin}</span>
-          <span className="font-semibold">{readable_departure}</span>
+          <span className="font-semibold" aria-hidden>
+            {origin}
+          </span>
+          <span className="font-semibold" aria-hidden>
+            {readable_departure}
+          </span>
         </section>
         <FaAngleRight size={32} color={iconColor} />
         <section
           data-testid="arrival"
+          aria-label={`Arrival at ${destination} at ${readable_arrival}`}
           className={`flex flex-col ${sectionStyle} py-3 px-7 rounded-xl`}
         >
-          <span className="font-semibold">{destination}</span>
-          <span className="font-semibold">{readable_arrival}</span>
+          <span className="font-semibold" aria-hidden>
+            {destination}
+          </span>
+          <span className="font-semibold" aria-hidden>
+            {readable_arrival}
+          </span>
         </section>
       </div>
     </button>

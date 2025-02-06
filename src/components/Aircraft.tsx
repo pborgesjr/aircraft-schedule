@@ -20,14 +20,19 @@ export const Aircraft = ({ aircraft, onClick, isSelected }: AircraftProps) => {
           isSelected ? "bg-white" : ""
         }`}
         onClick={onClick}
+        aria-label={`Select aircraft ${aircraft.ident}`}
       >
-        <h2 className={`font-bold ${isSelected ? "text-black" : "text-white"}`}>
+        <h2
+          className={`font-bold ${isSelected ? "text-black" : "text-white"}`}
+          aria-label="Aircraft ID"
+        >
           {aircraft.ident}
         </h2>
         <p
           className={`font-semibold ${
             isSelected ? "text-black" : "text-white"
           }`}
+          aria-label="Percentage of time scheduled"
         >
           {percentage}
         </p>
